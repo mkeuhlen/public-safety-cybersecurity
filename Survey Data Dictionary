@@ -1,0 +1,63 @@
+# Survey Data Dictionary
+
+This describes the two anonymized raw survey files in this folder:
+`pre-training-survey.csv` and `post-training-survey.csv`.
+
+## About the data
+
+The surveys measured cybersecurity awareness among 911 dispatch staff before and
+after a targeted training session. The same 15-item instrument was used for both.
+
+- **Pre-training:** 26 responses (`n = 26`)
+- **Post-training:** 13 responses (`n = 13`)
+
+The two files are **anonymous and unpaired** so an individual's pre-training response
+cannot be matched to their post-training response. This method was chosen specifically to preserve
+employee privacy and encourage participation. As noted in the project write-up, subsequent 
+versions of this project completed in-house would benefit from paired survey methodology. 
+
+### Privacy handling
+
+- **Timestamps removed.** The original exports included a submission timestamp for each
+  response. In a small, shift-based workforce these could contribute to re-identification,
+  so the timestamp column has been dropped from both files.
+- **Identifiers generalized.** A small number of questions and answer options originally
+  named the partner agency, a neighboring city, and a specific software vendor. These have
+  been replaced with generic equivalents (e.g. "your agency," "a neighboring city's IT
+  department," "your CAD vendor"). The substance and difficulty of each question is unchanged.
+- **No free-text fields.** Every question is fixed multiple-choice, so no free-response
+  text, and therefore no incidental personal information is present in the data.
+- **One excluded response.** The raw pre-training export contained 27 responses; one was
+  submitted about a week after training and was excluded from the baseline per the project's
+  methodology. It is not included here, so this file reflects the 26-response analytical set.
+
+## Question structure
+
+The instrument has two parts. Questions 1–10 are **behavioral** scenario items (what a
+staff member would actually do), each with one correct response. Questions 11–15 are
+**self-assessment** items measuring familiarity, perceived risk, confidence, training
+recency, and reporting knowledge.
+
+| # | Type | Topic | Expected / correct response |
+|---|------|-------|------------------------------|
+| Q1 | Behavioral | Spoofed vendor email (display name vs. real address) | Treat as suspicious - the sender address is the red flag |
+| Q2 | Behavioral | Credential request from a "vendor" caller | Do not confirm the login; escalate to a supervisor/IT |
+| Q3 | Behavioral | Urgent NCIC account-lockout email | Verify authenticity with a manager/IT before clicking |
+| Q4 | Behavioral | Caller asks you to run a downloaded file | Decline to run it; report the contact |
+| Q5 | Behavioral | Safest way to verify an email link *(gap identified)* | Hover to preview the URL before clicking |
+| Q6 | Behavioral | Caller-provided callback number *(gap identified)* | Independently look up the real number, verify, and report |
+| Q7 | Behavioral | Primary goal of a phishing email | Get you to click a link or open an attachment |
+| Q8 | Behavioral | OSINT / attacker research awareness | No - such details are public or obtainable through research |
+| Q9 | Behavioral | Convincing fake login page | Check the URL in the address bar before entering credentials |
+| Q10 | Behavioral | Action after a suspicious contact | Report it to a supervisor/IT, even if you didn't fall for it |
+| Q11 | Self-assessment | Familiarity with phishing / social engineering | - (Very familiar / Somewhat / Not at all) |
+| Q12 | Self-assessment | Belief that PSAPs are cyberattack targets | - (Yes / Unsure / No) |
+| Q13 | Self-assessment | Confidence recognizing an attack | - (Very / Somewhat / Not confident) |
+| Q14 | Self-assessment | Received cybersecurity training in past 2 years | - (Yes / Unsure / No) |
+| Q15 | Self-assessment | Knows how to report a suspicious email | - (Yes / Unsure / No) |
+
+## Scoring note
+
+For the behavioral items, the correct response is also the majority ("modal") response in
+the pre-training baseline. Per-question correct rates and the full analysis are reported in
+the capstone paper (Table 1 for the baseline, Table 3 for the pre/post comparison).
