@@ -6,7 +6,7 @@ Answering Point (PSAP) environments.
 
 ## Papers
 
-### [`security-operations-psap-resilience.docx`](./security-operations-psap-resilience.docx)
+### [`security-operations-psap-resilience.pdf`](./security-operations-psap-resilience.pdf)
 **Security Operations in Public Safety: Applying the CISSP Incident 
 Lifecycle to PSAP Cyber Resilience**
 
@@ -17,7 +17,7 @@ and prevention, detection and analysis, response and containment, and
 recovery and post-incident improvement, with practical recommendations 
 for PSAP technical leaders.
 
-### [`tdos-mitigation-investigation.docx`](./tdos-mitigation-investigation.docx)
+### [`tdos-mitigation-investigation.pdf`](./tdos-mitigation-investigation.pdf)
 **Investigation into Mitigating Telephony Denial of Service Threats to 
 PSAPs Through Layered Security Practices**
 
